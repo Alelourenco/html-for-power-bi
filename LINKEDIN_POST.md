@@ -35,13 +35,30 @@ O prompt já pede pra IA ler a documentação completa do visual, que tá no meu
 **Prompt pra adaptar seu código:**
 
 ```
-Leia a documentação completa do visual "HTML for Power BI" neste link antes de fazer qualquer alteração:
-https://portfolio-alexandre-lourenco.vercel.app/en/resources/html-para-power-bi
+Adapte a seguinte medida DAX para funcionar com o custom visual "HTML for Power BI".
 
-Agora adapte a seguinte medida DAX para funcionar com esse visual, seguindo todas as regras da documentação.
+REGRAS OBRIGATÓRIAS — siga TODAS sem exceção:
+
+1. BLOCO VARS: Adicione <!-- VARS (sem fechar!) no início do RETURN. Cada variável em uma linha como _Nome:" & _Nome & " (cores) ou _FontNome:min|preferred|max (font-sizes). Feche com --> em linha separada. NUNCA escreva <!-- VARS --> na mesma linha.
+
+2. NUNCA USE var(--nome) NO CSS: O visual faz find-and-replace direto no HTML. Os valores devem estar INLINE concatenados com &. Correto: background: " & _CorFundo & "; Errado: background: var(--_CorFundo);
+
+3. CLAMP() COM 3 ARGUMENTOS EXPLÍCITOS: Sempre clamp(0.5rem, 2vmin, 1rem). Nunca clamp(var(--algo)).
+
+4. FORMAT() ENTRE & USA ASPAS NORMAIS: Quando FORMAT está fora da string (entre operadores &), use aspas normais. Correto: " & FORMAT(val, "0.0") & " Errado: " & FORMAT(val, ""0.0"") & "
+
+5. ESTRUTURA DO RETURN: Alterna entre strings (entre aspas) e expressões DAX (entre &). Tudo que é HTML fica dentro de aspas, tudo que é DAX fica fora.
+
+6. CSS RESPONSIVO COM vmin: Use vmin (não vw/vh). Exemplo: font-size: clamp(0.5rem, 2vmin, 1rem); padding: clamp(4px, 2vmin, 16px);
+
+7. O QUE VAI NO BLOCO VARS: Apenas cores e font-sizes de estilo. Cores: _Nome:" & _Nome & " Font-sizes: _Nome:min|preferred|max (correspondendo ao clamp no CSS). NÃO listar variáveis de dados (_Valor, _Meta, etc).
+
+8. CONTAINER RAIZ: width:100%; height:100%; background:transparent. O card interno define seu próprio fundo.
 
 Aqui está minha medida:
 [COLE SEU CÓDIGO AQUI]
+
+Retorne a medida DAX completa pronta para colar no Power BI.
 ```
 
 Download do visual: https://github.com/Alelourenco/html-for-power-bi
@@ -84,13 +101,30 @@ The prompt tells the AI to read the full documentation first, which lives on my 
 **Prompt to adapt your code:**
 
 ```
-Read the full documentation for the "HTML for Power BI" visual at this link before making any changes:
-https://portfolio-alexandre-lourenco.vercel.app/en/resources/html-para-power-bi
+Adapt the following DAX measure to work with the custom visual "HTML for Power BI".
 
-Now adapt the following DAX measure to work with this visual, following all the rules from the documentation.
+MANDATORY RULES — follow ALL without exception:
+
+1. VARS BLOCK: Add <!-- VARS (without closing!) at the beginning of RETURN. Each variable on its own line as _Name:" & _Name & " (colors) or _FontName:min|preferred|max (font-sizes). Close with --> on a separate line. NEVER write <!-- VARS --> on the same line.
+
+2. NEVER USE var(--name) IN CSS: The visual does string find-and-replace on the HTML. Values must be INLINE concatenated with &. Correct: background: " & _BgColor & "; Wrong: background: var(--_BgColor);
+
+3. CLAMP() WITH 3 EXPLICIT ARGUMENTS: Always clamp(0.5rem, 2vmin, 1rem). Never clamp(var(--something)).
+
+4. FORMAT() BETWEEN & USES NORMAL QUOTES: When FORMAT is outside the string (between & operators), use normal quotes. Correct: " & FORMAT(val, "0.0") & " Wrong: " & FORMAT(val, ""0.0"") & "
+
+5. RETURN STRUCTURE: Alternates between strings (in quotes) and DAX expressions (between &). HTML goes inside quotes, DAX goes outside.
+
+6. RESPONSIVE CSS WITH vmin: Use vmin (not vw/vh). Example: font-size: clamp(0.5rem, 2vmin, 1rem); padding: clamp(4px, 2vmin, 16px);
+
+7. WHAT GOES IN THE VARS BLOCK: Only styling colors and font-sizes. Colors: _Name:" & _Name & " Font-sizes: _Name:min|preferred|max (matching the clamp in CSS). Do NOT list data variables (_Value, _Target, etc).
+
+8. ROOT CONTAINER: width:100%; height:100%; background:transparent. The inner card defines its own background.
 
 Here is my measure:
 [PASTE YOUR CODE HERE]
+
+Return the complete DAX measure ready to paste in Power BI.
 ```
 
 Download the visual: https://github.com/Alelourenco/html-for-power-bi
