@@ -115,3 +115,15 @@ Veja o arquivo [MANUAL.md](MANUAL.md) para o prompt completo que você pode usar
 ## 📄 Licença
 
 MIT
+
+---
+
+## 📚 Full Documentation & AI Integration Guide
+
+**🔗 [https://portfolio-alexandre-lourenco.vercel.app/resources/html-para-power-bi](https://portfolio-alexandre-lourenco.vercel.app/resources/html-para-power-bi)**
+
+For AI assistants (Copilot, ChatGPT, Claude): visit the link above to read the complete technical documentation with adaptation rules, prompt templates, and code examples.
+
+---
+
+*Created by [Alexandre Lourenço](https://portfolio-alexandre-lourenco.vercel.app)*
