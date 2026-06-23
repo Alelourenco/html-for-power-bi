@@ -6,65 +6,47 @@
 
 ---
 
-🚀 **Lancei o HTML for Power BI — o custom visual que vai mudar a forma como você cria visuais no Power BI**
+Novo recurso pra Power BI! 🚀
 
-Sabe quando você tem uma medida DAX que gera HTML/CSS mas fica limitado pelo visual padrão do AppSource? Resolvi isso.
+Em breve vou começar a postar components customizados feitos com DAX, HTML, CSS e SVG. E pensando nisso, antes de sair publicando os visuais, resolvi fazer primeiro um compilador próprio pra renderizar esses components.
 
-Criei o **HTML for Power BI** — um custom visual open source que vai além de simplesmente renderizar HTML.
+A ideia por trás dele é simples: trazer inteligência pro render. Nem todo mundo tem facilidade com programação ou DAX avançado, e eu quero que qualquer pessoa consiga usar esses visuais sem dor de cabeça.
 
 **O que ele faz hoje:**
 
-⚡ Detecta automaticamente cores, fontes e tamanhos do seu HTML/CSS e expõe no painel de formatação — sem você tocar em código
+Ele lê as variáveis (VAR) do código DAX e traz os valores direto no painel de formatação do visual. Então o usuário consegue alterar facilmente por lá:
+- Cores (color picker nativo)
+- Espaçamento e dimensionamento
+- Zoom global proporcional
+- Estilo de fonte (dropdown)
 
-🎨 Color pickers dinâmicos com o nome exato da variável DAX correspondente
+Tudo sem precisar mexer em uma linha de código.
 
-📐 Controles de font-size com os valores reais do seu clamp()
+Por enquanto o desenvolvimento tem alguns recursos básicos, mas em breve vou trazendo melhorias pra tornar ele cada vez mais low-code pra quem utilizar.
 
-🔍 Zoom global que escala tudo proporcionalmente (fontes, barras, padding, bordas)
+**Pra quem já tem código pronto:**
 
-🔄 Substituição em tempo real: muda a cor no painel → o visual aplica instantaneamente
+Esse visual também serve pra códigos de outros desenvolvedores ou seus mesmo. Se você já tem um visual customizado em HTML/DAX, pode adaptar ele pra funcionar com esse compilador usando um prompt que eu criei. É só colar o prompt + seu código em qualquer IA e pronto.
 
-🔒 DOMPurify integrado — seguro por padrão
+O prompt já pede pra IA ler a documentação completa do visual, que tá no meu site:
 
-🖼️ SVG nativo — gráficos, ícones, animações e formas vetoriais diretamente no DAX
+📖 https://portfolio-alexandre-lourenco.vercel.app/en/resources/html-para-power-bi
 
-🎯 Recebe filtros de Slicers e outros visuais nativamente
+**Prompt pra adaptar seu código:**
 
----
+```
+Leia a documentação completa do visual "HTML for Power BI" neste link antes de fazer qualquer alteração:
+https://portfolio-alexandre-lourenco.vercel.app/en/resources/html-para-power-bi
 
-**E isso é só o começo.**
+Agora adapte a seguinte medida DAX para funcionar com esse visual, seguindo todas as regras da documentação.
 
-Estou desenvolvendo para as próximas versões:
+Aqui está minha medida:
+[COLE SEU CÓDIGO AQUI]
+```
 
-→ Detecção automática de mais campos (margins, gaps, border-radius, opacidades)
-→ Divisões e grupos de propriedades por seção do visual
-→ Suporte a múltiplas medidas no mesmo visual
-→ Preview ao vivo de propriedades antes de confirmar
+Download do visual: https://github.com/Alelourenco/html-for-power-bi
 
----
-
-**Para quem já tem código de visual customizado em DAX + HTML:**
-
-Criei um prompt específico para adaptar qualquer medida existente para usar este visual. Basta colar o prompt + seu código em qualquer IA (Copilot, ChatGPT, Claude) e você terá a versão compatível em segundos.
-
-📖 Documentação + prompt de adaptação: https://github.com/Alelourenco/html-for-power-bi
-
----
-
-**Todos os components que eu postar aqui serão adaptados para este visual**, aproveitando:
-- Cross-filter nativo com outros visuais
-- Painel de formatação inteligente
-- Democratização dos visuais customizados — qualquer pessoa pode ajustar as cores e tamanhos sem precisar editar DAX
-
-O objetivo é simples: **democratizar visuais bonitos no Power BI**, sem depender de subscriptions caras ou conhecimento avançado de CSS.
-
-Se você já tem visuais em HTML no Power BI ou quer começar a criar, esse projeto é pra você. ⬇️
-
-🔗 https://github.com/Alelourenco/html-for-power-bi
-
----
-
-#PowerBI #DataVisualization #DAX #HTML #CSS #CustomVisual #BusinessIntelligence #OpenSource #PowerBIDeveloper #DataAnalytics #Microsoft #DataScience
+#PowerBI #DAX #HTML #CSS #SVG #CustomVisual #DataVisualization #OpenSource #BusinessIntelligence
 
 ---
 ---
@@ -73,62 +55,44 @@ Se você já tem visuais em HTML no Power BI ou quer começar a criar, esse proj
 
 ---
 
-🚀 **I built HTML for Power BI — the custom visual that changes how you create visuals in Power BI**
+New Power BI resource! 🚀
 
-Ever had a DAX measure generating HTML/CSS but felt limited by the standard AppSource visual? I fixed that.
+I'll soon start posting custom components built with DAX, HTML, CSS and SVG. But before publishing the visuals themselves, I decided to build a compiler first to render these components.
 
-I built **HTML for Power BI** — an open source custom visual that goes far beyond just rendering HTML.
+The idea behind it is simple: bring intelligence to the rendering. Not everyone is comfortable with coding or advanced DAX, and I want anyone to be able to use these visuals without headaches.
 
 **What it does today:**
 
-⚡ Automatically detects colors, fonts, and sizes from your HTML/CSS and exposes them in the format pane — no code editing required
+It reads the DAX variables (VAR) from your code and brings the values directly into the visual's format pane. So the user can easily change:
+- Colors (native color picker)
+- Spacing and sizing
+- Proportional global zoom
+- Font style (dropdown)
 
-🎨 Dynamic color pickers labeled with the exact name of the corresponding DAX variable
+All without touching a single line of code.
 
-📐 Font-size controls showing the real values from your clamp() expressions
+For now the development has some basic features, but I'll keep bringing improvements to make it more and more low-code for everyone.
 
-🔍 Global zoom slider that scales everything proportionally (fonts, bars, padding, borders)
+**For those who already have code:**
 
-🔄 Real-time substitution: change a color in the pane → the visual applies it instantly
+This visual also works with other developers' code or your own. If you already have a custom HTML/DAX visual, you can adapt it to work with this compiler using a prompt I created. Just paste the prompt + your code into any AI and you're done.
 
-🔒 DOMPurify built-in — secure by default
+The prompt tells the AI to read the full documentation first, which lives on my site:
 
-🖼️ Native SVG support — charts, icons, animations and vector shapes directly in DAX
+📖 https://portfolio-alexandre-lourenco.vercel.app/en/resources/html-para-power-bi
 
-🎯 Natively receives filters from Slicers and cross-filtering from other visuals
+**Prompt to adapt your code:**
 
----
+```
+Read the full documentation for the "HTML for Power BI" visual at this link before making any changes:
+https://portfolio-alexandre-lourenco.vercel.app/en/resources/html-para-power-bi
 
-**And this is just the beginning.**
+Now adapt the following DAX measure to work with this visual, following all the rules from the documentation.
 
-Coming in future versions:
+Here is my measure:
+[PASTE YOUR CODE HERE]
+```
 
-→ Automatic detection of more properties (margins, gaps, border-radius, opacity)
-→ Property groups and sections organized by visual area
-→ Multiple measures support in the same visual
-→ Live preview before confirming property changes
+Download the visual: https://github.com/Alelourenco/html-for-power-bi
 
----
-
-**Already have custom HTML visuals built with DAX?**
-
-I built a specific prompt to adapt any existing measure to work with this visual. Just paste the prompt + your code into any AI (Copilot, ChatGPT, Claude) and you'll have a compatible version in seconds.
-
-📖 Full documentation + adaptation prompt: https://github.com/Alelourenco/html-for-power-bi
-
----
-
-**Every component I share from now on will be adapted to this visual**, taking full advantage of:
-- Native cross-filtering with other Power BI visuals
-- Smart format pane with auto-detected properties
-- Democratization of custom visuals — anyone can adjust colors and sizes without touching DAX
-
-The goal is simple: **democratize beautiful visuals in Power BI**, without expensive subscriptions or advanced CSS knowledge.
-
-If you already build HTML visuals in Power BI or want to start, this project is for you. ⬇️
-
-🔗 https://github.com/Alelourenco/html-for-power-bi
-
----
-
-#PowerBI #DataVisualization #DAX #HTML #CSS #CustomVisual #BusinessIntelligence #OpenSource #PowerBIDeveloper #DataAnalytics #Microsoft #DataScience #PowerBIDesktop #BI
+#PowerBI #DAX #HTML #CSS #SVG #CustomVisual #DataVisualization #OpenSource #BusinessIntelligence
